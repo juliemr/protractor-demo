@@ -1,0 +1,19 @@
+{
+  "name": "protractor-demo",
+  "version": "0.0.1",
+  "author": "Julie Ralph <ju.ralph@gmail.com>",
+  "description": "A demo app with Protractor tests",
+  "scripts": {
+    "start": "node app/expressserver.js",
+    "test": "node_modules/.bin/protractor test/conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juliemr/protractor-demo"
+  },
+  "dependencies": {
+    "express": "~3.4.0",
+    "protractor": "~0.10.0"
+  },
+  "license": "MIT"
+}
