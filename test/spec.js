@@ -1,35 +1,31 @@
 describe('slow calculator', function() {
-  var ptor;
   beforeEach(function() {
-    ptor = protractor.getInstance();
-    ptor.get('http://localhost:3456');
+    browser.get('http://localhost:3456');
   });
 
   it('should add numbers', function() {
-    ptor.findElement(protractor.By.input('first')).sendKeys(4);
-    ptor.findElement(protractor.By.input('second')).sendKeys(5);
+    element(by.model('first')).sendKeys(4);
+    element(by.model('second')).sendKeys(5);
 
-    ptor.findElement(protractor.By.id('gobutton')).click();
+    element(by.id('gobutton')).click();
 
-     expect(ptor.findElement(protractor.By.binding('latest')).getText()).
+    expect(element(by.binding('latest')).getText()).
         toEqual('9');
   });
 
   describe('memory', function() {
     var first, second, goButton;
     beforeEach(function() {
-      first = ptor.findElement(protractor.By.input('first'));
-      second = ptor.findElement(protractor.By.input('second'));
-      goButton = ptor.findElement(protractor.By.id('gobutton'));
+      first = element(by.model('first'));
+      second = element(by.model('second'));
+      goButton = element(by.id('gobutton'));
     });
 
     it('should start out with an empty memory', function () {
-      var memory = ptor.findElements(protractor.By.repeater('result in memory').
-          column('result.value'));
+      var memory =
+        element.all(by.repeater('result in memory'));
 
-      memory.then(function (arr) {
-        expect(arr.length).toEqual(0);
-      });
+      expect(memory.count()).toEqual(0);
     });
 
     it('should fill the memory with past results', function() {
@@ -41,7 +37,7 @@ describe('slow calculator', function() {
       second.sendKeys(20);
       goButton.click();
 
-      var memory = ptor.findElements(protractor.By.repeater('result in memory').
+      var memory = element.all(by.repeater('result in memory').
           column('result.value'));
       memory.then(function (arr) {
         expect(arr.length).toEqual(2);
