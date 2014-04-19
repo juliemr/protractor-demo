@@ -1,48 +1,31 @@
+var calculator = require('../page_objects/calculator');
+
 describe('slow calculator', function() {
   beforeEach(function() {
-    browser.get('http://localhost:3456');
+    calculator.load('http://localhost:3456');
   });
 
   it('should add numbers', function() {
-    element(by.model('first')).sendKeys(4);
-    element(by.model('second')).sendKeys(5);
-
-    element(by.id('gobutton')).click();
-
-    expect(element(by.binding('latest')).getText()).
-        toEqual('9');
+    calculator.sum(4, 5);
+    expect(calculator.getResult()).toEqual('9');
   });
 
   describe('memory', function() {
-    var first, second, goButton;
-    beforeEach(function() {
-      first = element(by.model('first'));
-      second = element(by.model('second'));
-      goButton = element(by.id('gobutton'));
-    });
-
     it('should start out with an empty memory', function () {
-      var memory =
-        element.all(by.repeater('result in memory'));
-
+      var memory = calculator.getMemory();
       expect(memory.count()).toEqual(0);
     });
 
     it('should fill the memory with past results', function() {
-      first.sendKeys(1);
-      second.sendKeys(1);
-      goButton.click();
+      calculator.sum(1, 1);
+      calculator.sum(10, 20);
 
-      first.sendKeys(10);
-      second.sendKeys(20);
-      goButton.click();
-
-      var memory = element.all(by.repeater('result in memory').
-          column('result.value'));
-      memory.then(function (arr) {
-        expect(arr.length).toEqual(2);
-        expect(arr[0].getText()).toEqual('30'); // 10 + 20 = 30
-        expect(arr[1].getText()).toEqual('2'); // 1 + 1 = 2
+      var memory = calculator.getMemory();
+      var resultValues = memory.getResultValues();
+      resultValues.then(function (values) {
+        expect(values.length).toEqual(2);
+        expect(values[0].getText()).toEqual('30'); // 10 + 20 = 30
+        expect(values[1].getText()).toEqual('2'); // 1 + 1 = 2
       });
     });
   });

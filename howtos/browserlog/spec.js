@@ -1,11 +1,9 @@
+var calculator = require('../../page_objects/calculator');
+
 describe('slow calculator', function() {
-  var firstNum = element(by.model('first'));
-  var secondNum = element(by.model('second'));
-  var goButton = element(by.id('gobutton'));
-  var result = element(by.binding('latest'));
 
   beforeEach(function() {
-    browser.get('http://juliemr.github.io/protractor-demo/');
+    calculator.load('http://juliemr.github.io/protractor-demo/');
   });
 
   afterEach(function() {
@@ -17,10 +15,8 @@ describe('slow calculator', function() {
   });
 
   it('should pass a normal test', function() {
-    firstNum.sendKeys('1');
-    secondNum.sendKeys('2');
-    goButton.click();
-    expect(result.getText()).toEqual('3');
+    calculator.sum(1, 2)
+    expect(calculator.getResult()).toEqual('3');
   });
 
   it('should fail when the console has errors - FAILURE EXPECTED', function() {
