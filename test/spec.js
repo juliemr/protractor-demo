@@ -23,7 +23,7 @@ describe('slow calculator', function() {
 
     it('should start out with an empty memory', function () {
       var memory =
-        element.all(by.repeater('result in memory'));
+          element.all(by.repeater('result in memory'));
 
       expect(memory.count()).toEqual(0);
     });

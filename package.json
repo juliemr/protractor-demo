@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "express": "~3.4.0",
-    "protractor": "~0.21.0",
+    "protractor": "1.0.0-rc1",
     "mkdirp": "~0.3.5"
   },
   "license": "MIT"
