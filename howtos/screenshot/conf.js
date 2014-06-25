@@ -1,5 +1,5 @@
 // Tests for the calculator.
-var ScreenshotReporter = require('./ScreenshotReporter.js');
+var ScreenshotReporter = require('./screenshotReporter.js');
 
 exports.config = {
   directConnect: true,
