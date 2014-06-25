@@ -1,5 +1,5 @@
 // Tests for the calculator.
-var ScreenshotReporter = require('./ScreenshotReporter.js');
+var ScreenshotReporter = require('./screenshotReporter.js');
 
 exports.config = {
   seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
