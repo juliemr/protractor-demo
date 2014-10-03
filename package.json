@@ -14,7 +14,9 @@
   "dependencies": {
     "express": "~3.4.0",
     "protractor": "~1.0.0",
-    "mkdirp": "~0.3.5"
+    "mkdirp": "~0.3.5",
+    "q": "1.0.0",
+    "firefox-profile": "0.3.4"
   },
   "license": "MIT"
 }
