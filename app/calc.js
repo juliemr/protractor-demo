@@ -53,4 +53,5 @@ var CalcCtrl = function($timeout, $scope) {
   };
 };
 
-var calculator = angular.module('calculator', []);
+var calculator = angular.module('calculator', []).
+    controller('CalcCtrl', CalcCtrl);
