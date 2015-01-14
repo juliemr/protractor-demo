@@ -15,7 +15,7 @@ To run
 Get ChromeDriver set up: Run `./node_modules/.bin/webdriver-manager update`.
 
 Start the test application server with
-`node app/expresserver.js`
+`node app/expressserver.js`
 Or if you're feeling lazy, just `npm start`.
 
 Run the tests with
