@@ -15,7 +15,7 @@ To run
 Get a selenium server running at localhost:4444. Run `./node_modules/.bin/webdriver-manager update` then `./node_modules/.bin/webdriver-manager start`. See the Protractor documentation for more info.
 
 Start the test application server with
-`node app/expresserver.js`
+`node app/expressserver.js`
 Or if you're feeling lazy, just `npm start`.
 
 Run the tests with
