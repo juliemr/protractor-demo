@@ -7,6 +7,5 @@ exports.config = {
     'spec.js'
   ],
 
-  capabilities: helper.getFirefoxProfile(),
-  chromeOnly: false,
+  getMultiCapabilities: helper.getFirefoxProfile
 };

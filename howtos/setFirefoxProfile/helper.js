@@ -7,11 +7,11 @@ exports.getFirefoxProfile = function() {
   var firefoxProfile = new FirefoxProfile();
   firefoxProfile.setPreference('browser.newtab.url', 'https://www.angularjs.org');
   firefoxProfile.encoded(function(encodedProfile) {
-    var capabilities = {
-      'browserName': 'firefox',
-      'firefox_profile' : encodedProfile
-    };
-    deferred.resolve(capabilities);
+    var multiCapabilities = [{
+      browserName: 'firefox',
+      firefox_profile : encodedProfile
+    }];
+    deferred.resolve(multiCapabilities);
   });
 
   return deferred.promise;
