@@ -2,7 +2,7 @@
 var ScreenshotReporter = require('./ScreenshotReporter.js');
 
 exports.config = {
-  seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
+  directConnect: true,
 
   specs: [
     'spec.js'

@@ -12,7 +12,7 @@ Setup
 
 To run
 ------
-Get a selenium server running at localhost:4444. Run `./node_modules/.bin/webdriver-manager update` then `./node_modules/.bin/webdriver-manager start`. See the Protractor documentation for more info.
+Get ChromeDriver set up: Run `./node_modules/.bin/webdriver-manager update`.
 
 Start the test application server with
 `node app/expresserver.js`
