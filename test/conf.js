@@ -1,6 +1,6 @@
 // Tests for the calculator.
 exports.config = {
-  directConnet = true,
+  directConnet: true,
 
   specs: [
     'spec.js'
