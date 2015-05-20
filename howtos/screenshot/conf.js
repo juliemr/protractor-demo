@@ -8,6 +8,8 @@ exports.config = {
     'spec.js'
   ],
 
+  framework: 'jasmine2',
+
   capabilities: {
     'browserName': 'chrome'
   },

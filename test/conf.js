@@ -1,6 +1,8 @@
 // Tests for the calculator.
 exports.config = {
-  directConnet: true,
+  directConnect: true,
+
+  framework: 'jasmine2',
 
   specs: [
     'spec.js'
