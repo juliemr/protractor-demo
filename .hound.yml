@@ -6,3 +6,5 @@ scss:
   enabled: false
 haml:
   enabled: false
+javascript:
+  ignore_file: .js_ignore
