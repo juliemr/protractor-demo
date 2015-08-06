@@ -1,4 +1,8 @@
-javascript:
-  enable: true
+ruby:
+  enabled: false
+coffeescript:
+  enabled: false
 scss:
+  enabled: false
+haml:
   enabled: false
