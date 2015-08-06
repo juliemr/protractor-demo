@@ -7,4 +7,5 @@ scss:
 haml:
   enabled: false
 javascript:
+  config_file: .js-style.json
   ignore_file: .js_ignore
