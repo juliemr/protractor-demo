@@ -16,7 +16,7 @@
     "protractor": "2.1.0",
     "mkdirp": "~0.3.5",
     "q": "1.0.0",
-    "firefox-profile": "0.3.4"
+    "firefox-profile": "1.2.0"
   },
   "license": "MIT"
 }
