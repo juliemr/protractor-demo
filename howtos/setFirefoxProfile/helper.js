@@ -8,8 +8,10 @@ exports.getFirefoxProfile = function() {
   firefoxProfile.setPreference('browser.newtab.url', 'https://www.angularjs.org');
   firefoxProfile.encoded(function(encodedProfile) {
     var multiCapabilities = [{
-      browserName: 'firefox',
-      firefox_profile : encodedProfile
+      'browserName': 'firefox',
+      'moz:firefoxOptions': {
+         profile: encodedProfile
+      }
     }];
     deferred.resolve(multiCapabilities);
   });
