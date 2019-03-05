@@ -6,14 +6,14 @@ exports.getFirefoxProfile = function () {
 
     const firefoxProfile = new FirefoxProfile();
     firefoxProfile.setPreference('browser.startup.homepage', 'https://www.protractortest.org/#/');
-    firefoxProfile.encoded(function (encodedProfile) {
+    firefoxProfile.encoded(function (error, encodedProfile) {
         const multiCapabilities = [{
             'browserName': 'firefox',
             'moz:firefoxOptions': {
                 'profile': encodedProfile
             }
         }];
-        deferred.resolve(multiCapabilities);
+        error ? deferred.reject(error) : deferred.resolve(multiCapabilities);
     });
 
     return deferred.promise;
